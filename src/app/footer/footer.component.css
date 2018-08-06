@@ -1,0 +1,75 @@
+#end {
+    width: 100%;
+    height: 200px;
+}
+#end1 {
+    width: 33%;
+    height: 200px;
+    text-align: center;
+    float: left;
+    background-color: black;
+    padding: 15px;
+    color: white;
+}
+
+#end2 {
+    width: 33%;
+    height: 200px;
+    float: left;
+    background-color: black;
+    text-align: center;
+    padding: 15px;
+    font-size: 15px;
+    color: white;
+}       
+#endp2 {
+    font-size: 14px;
+    color: #ffffff;
+    
+}
+#end3 {
+    width: 34%;
+    height: 200px;
+    float: left;
+    background-color: black;
+    text-align: center;
+    padding: 15px;
+    font-size: 15px;
+    color: white;
+}
+#homefinal {
+    width: 100%;
+}
+#homefinal1 {
+    width: 50%;
+    height: 30px;
+    float: left;
+    background-color: #474e5d;
+}
+#homefinal2 {
+    width: 50%;
+    height: 30px;
+    float: left;
+    background-color: #474e5d;
+}
+#finalul {
+    margin-right: 200px;
+    list-style: none;
+    padding-left: 100px;
+}
+#finalul li {
+    width: 110px;
+    height: 30px;
+    line-height: 30px;  
+    font-size: 14px;
+    float: left;
+}
+#finalul li a {
+    margin-right: 0px;
+    text-decoration: none;
+    color: white;
+}
+#finalul li:hover {
+    font-size: 15px;
+    cursor: pointer;
+}

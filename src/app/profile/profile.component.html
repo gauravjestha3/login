@@ -1,0 +1,65 @@
+<html>
+    <body>
+    <div id="dump"></div>
+        <div id="container">
+            <h2>User Details</h2>
+            <table class="table table-hover" id="DetailsTable" border="2" >
+            <tr>
+                <th>Field</th>
+                <th>Value</th> 
+              </tr>
+              <tr>
+                <td><b>Title</b></td>
+                <td>{{details.title}}</td> 
+                </tr>
+                <tr>
+                <td><b>First Name</b></td>
+                <td>{{details.firstname}}</td> 
+              </tr>
+              <tr>
+                  <td><b>Lirst Name</b></td>
+                  <td>{{details.lastname}}</td> 
+              </tr>
+              <tr>
+                  <td><b>Gender</b></td>
+                  <td>{{details.gender}}</td> 
+              </tr>
+              <tr>
+                <td><b>Contact Number</b></td>
+                <td>{{details.contactnum}}</td> 
+              </tr>
+              <tr>
+                <td><b>Marital Status</b></td>
+                <td>{{details.maritalstatus}}</td> 
+                </tr>
+              <tr>
+                  <td><b>Email</b></td>
+                  <td>{{details.email}}</td> 
+                </tr>
+                <tr>
+              <tr>
+                  <td><b>Employee id</b></td>
+                  <td>{{details.empid}}</td> 
+              </tr>
+              <tr>
+                  <td><b>Password</b></td>
+                  <td>
+                      <input type="password" id="id" value = {{details.password}} disabled="disabled"/>
+                      <span id="eye" class="glyphicon glyphicon-eye-open" (click)='changeID("id")'></span>
+                      </td> 
+              </tr>
+        </table>
+        <button id="ResetBtn" (click)='ResetDetails()'>Reset Details</button>
+   </div>
+</body>
+</html>
+
+            
+            
+            
+            
+            
+            
+            
+            
+            

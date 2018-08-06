@@ -1,0 +1,57 @@
+#main {
+	font-family: Georgia, serif; 
+	background: url(/assets/login-page-bg.jpg) top center no-repeat #c4c4c4;
+    color: #3a3a3a;  
+    height: 500px;
+}
+.clear{
+	clear: both; 
+}
+
+
+fieldset { 
+	border: 0;
+}
+legend { 
+	display: none; 
+}
+
+#first {
+    width: 400px; 
+    margin-top: 165px;
+    margin-left: 520px; 
+	padding: 10px; 
+	font-size: 16px; 
+}
+
+#second {
+    width: 400px; 
+    margin-top: -25px;
+    margin-left: 492px; 
+	padding: 10px; 
+	font-size: 16px; 
+}
+
+input { 
+	width: 250px; 
+	display: block; 
+	padding: 4px; 
+	font-size: 18px;
+    color: #3a3a3a; 
+    display: inline-block;
+}
+			  
+#login	{ 
+	background: url(/assets/button-bg.png) repeat-x top center; 
+    border: 1px solid #999;
+    margin-left: 800px;
+    width: 70px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: bolder;
+
+}
+#login:hover { 
+	background: white; 
+	color: black; 
+}

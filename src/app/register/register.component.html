@@ -1,0 +1,132 @@
+    <div id="container">
+      <div id="upper"><br/><br/><br/>
+        <h2 id="AboveForm"> SignUp </h2>
+        <p id="AboveForm">Note - All fields are mandatory</p>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <form id="formdata" [formGroup]="RegisterForm" (ngSubmit)="OnSubmit()">
+            
+            <div class="form-group">
+              <label>
+                Title:
+                <select formControlName="title">
+                  <option value="Mr.">Mr</option>
+                  <option value="Mrs.">Mrs</option>
+                  <option value="Miss">Miss</option>        
+                  </select>
+              </label>
+            </div>
+            
+            <div class="form-group">
+              <label>
+                First Name:
+                <input type="text" class="form-control" formControlName="firstname" />
+                <div class="alert alert-danger" *ngIf="!RegisterForm.controls['firstname'].valid  &&  
+                    (RegisterForm.controls['firstname'].touch||RegisterForm.controls['firstname'].dirty)">
+                  <div *ngIf="RegisterForm.controls['firstname'].hasError('required')">First name is required</div>
+                  <div *ngIf="RegisterForm.controls['firstname'].hasError('pattern')">Please enter characters only</div>
+                </div>
+              </label>
+            </div>
+  
+            <div class="form-group">
+              <label>
+                Last Name:
+                <input type="text" class="form-control" formControlName="lastname" />
+                <div class="alert alert-danger" *ngIf="!RegisterForm.controls['lastname'].valid  &&  
+                    (RegisterForm.controls['lastname'].touch||RegisterForm.controls['lastname'].dirty)">
+                  <div *ngIf="RegisterForm.controls['lastname'].hasError('required')">Last name is required</div>
+                  <div *ngIf="RegisterForm.controls['lastname'].hasError('pattern')">Please enter characters only</div>
+                </div>
+              </label>
+            </div>
+  
+            <div class="form-group">
+              <label>
+                Gender:
+                <br/>
+                <div *ngFor="let g of genders" class="RadioButton">
+                  <input type="radio" [value]='g' formControlName="gender">  {{g}}
+                </div>
+              </label>
+            </div>
+  
+            <div class="form-group">
+              <label>
+                Contact Number:
+                <input type="text" class="form-control" maxlength="10" formControlName="contactnum">
+                <div class="alert alert-danger" *ngIf="!RegisterForm.controls['contactnum'].valid  &&  
+                      (RegisterForm.controls['contactnum'].touch||RegisterForm.controls['contactnum'].dirty)">
+                  <div *ngIf="RegisterForm.controls['contactnum'].hasError('required')">Please enter contact number</div>
+                  <div *ngIf="RegisterForm.controls['contactnum'].hasError('pattern')">Only digits</div>
+                </div>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label>
+                Marital Status:
+                <br/>
+                <div *ngFor="let ms of maritalstatus" class="RadioButton">
+                  <input type="radio" [value]='ms' formControlName="maritalstatus">  {{ms}}
+                </div>
+              </label>
+            </div>
+  
+            <div class="form-group">
+                <label>
+                  Email:
+                  <input type="text" class="form-control" maxlength="30" formControlName="email">
+                  <div class="alert alert-danger" *ngIf="!RegisterForm.controls['email'].valid  &&  
+                        (RegisterForm.controls['email'].touch||RegisterForm.controls['email'].dirty)">
+                    <div *ngIf="RegisterForm.controls['email'].hasError('required')">Please enter email</div>
+                    <div *ngIf="RegisterForm.controls['email'].hasError('pattern')">Valid Email</div>
+                  </div>
+                </label>
+              </div>
+
+            <div class="form-group">
+              <label>
+                Employee ID:
+                <input type="text" class="form-control" maxlength="4" formControlName="empid">
+                <div class="alert alert-danger" *ngIf="!RegisterForm.controls['empid'].valid  &&  
+                        (RegisterForm.controls['empid'].touch||RegisterForm.controls['empid'].dirty)">
+                  <div *ngIf="RegisterForm.controls['empid'].hasError('required')">Please enter employee id</div>
+                  <div *ngIf="RegisterForm.controls['empid'].hasError('pattern')">Only digits</div>
+                </div>
+              </label>
+            </div>
+  
+            <div class="form-group">
+              <label>
+                Password:
+                  <input type="password" id="id" class="form-control" minlength="8" maxlength="16" formControlName="password">
+                  <span id="eye" class="glyphicon glyphicon-eye-open" (click)='changeID("id")'></span>
+                <div class="alert alert-danger" *ngIf="!RegisterForm.controls['password'].valid  &&  
+                          (RegisterForm.controls['password'].touch||RegisterForm.controls['password'].dirty)">
+                  <div *ngIf="RegisterForm.controls['password'].hasError('required')">Please enter password</div>
+                  <div *ngIf="RegisterForm.controls['password'].hasError('pattern')">Password must contain at least one Uppercase character, one Smallcase character, one special character and
+                    one digit </div>
+                </div>
+              </label>
+            </div>
+  
+            <div class="form-group">
+              <label>
+                Confirm password:
+                <input type="password" class="form-control" minlength="8" maxlength="16" formControlName="confirmpassword" (keyup)="CheckPassword()">
+                <div class="alert alert-danger" *ngIf="!RegisterForm.controls['confirmpassword'].valid  &&  
+                            (RegisterForm.controls['confirmpassword'].touch||RegisterForm.controls['confirmpassword'].dirty)">
+                  <div *ngIf="RegisterForm.controls['confirmpassword'].hasError('required')">Please enter password again</div>
+                  <div *ngIf="RegisterForm.controls['confirmpassword'].hasError('pattern')"> {{myVar}} </div>
+                </div>
+              </label>
+            </div>
+            <button type="submit" id="submitbtn" [disabled]="!RegisterForm.valid || !check"  
+          [ngStyle] = "{ 'background-color': RegisterForm.valid && check ? 'green' : 'red' }" >Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
